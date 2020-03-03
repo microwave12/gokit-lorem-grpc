@@ -1,10 +1,10 @@
 package service
 
-import (
-	"context"
-)
+import "context"
 
 // Service ...
 type Service interface {
-	Lorem(ctx context.Context, requestType string, min, max int) (string, error)
+	Word(ctx context.Context, min, max int) (string, error)
+	Sentence(ctx context.Context, min, max int) (string, error)
+	Paragraph(ctx context.Context, min, max int) (string, error)
 }

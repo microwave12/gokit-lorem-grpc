@@ -3,16 +3,34 @@ syntax = "proto3";
 package pb;
 
 service Lorem {
-    rpc Lorem(LoremRequest) returns (LoremResponse) {}
+    rpc Word(WordRequest) returns (WordResponse) {}
+    rpc Sentence(SentenceRequest) returns (SentenceResponse) {}
+    rpc Paragraph(ParagraphRequest) returns (ParagraphResponse) {}
 }
 
-message LoremRequest {
-    string requestType = 1;
-    int32 min = 2;
-    int32 max = 3;
+message WordRequest {
+    int32 min = 1;
+    int32 max = 2;
 }
 
-message LoremResponse {
+message WordResponse {
     string message = 1;
-    string err = 2;
+}
+
+message SentenceRequest {
+    int32 min = 1;
+    int32 max = 2;
+}
+
+message SentenceResponse {
+    string message = 1;
+}
+
+message ParagraphRequest {
+    int32 min = 1;
+    int32 max = 2;
+}
+
+message ParagraphResponse {
+    string message = 1;
 }

@@ -7,40 +7,104 @@ import (
 	"github.com/microwave12/gokit-lorem-grpc/lorem-grpc/pb"
 )
 
-// EncodeLoremRequest ...
-func EncodeLoremRequest(_ context.Context, request interface{}) (interface{}, error) {
-	req := request.(endpoints.GenerateLoremRequest)
-	return &pb.LoremRequest{
-		RequestType: req.RequestType,
-		Min:         req.Min,
-		Max:         req.Max,
+// EncodeWordRequest ...
+func EncodeWordRequest(_ context.Context, request interface{}) (interface{}, error) {
+	req := request.(endpoints.LoremRequest)
+	return &pb.WordRequest{
+		Min: req.Min,
+		Max: req.Max,
 	}, nil
 }
 
-// DecodeLoremRequest ...
-func DecodeLoremRequest(_ context.Context, request interface{}) (interface{}, error) {
-	req := request.(*pb.LoremRequest)
-	return endpoints.GenerateLoremRequest{
-		RequestType: req.RequestType,
-		Min:         req.Min,
-		Max:         req.Max,
+// DecodeWordRequest ...
+func DecodeWordRequest(_ context.Context, request interface{}) (interface{}, error) {
+	req := request.(*pb.WordRequest)
+	return endpoints.LoremRequest{
+		Min: req.Min,
+		Max: req.Max,
 	}, nil
 }
 
-// EncodeLoremResponse ...
-func EncodeLoremResponse(_ context.Context, response interface{}) (interface{}, error) {
-	res := response.(endpoints.GenerateLoremResponse)
-	return &pb.LoremResponse{
+// EncodeWordResponse ...
+func EncodeWordResponse(_ context.Context, response interface{}) (interface{}, error) {
+	res := response.(endpoints.LoremResponse)
+	return &pb.WordResponse{
 		Message: res.Message,
-		Err:     res.Err,
 	}, nil
 }
 
-// DecodeLoremResponse ...
-func DecodeLoremResponse(_ context.Context, response interface{}) (interface{}, error) {
-	res := response.(*pb.LoremResponse)
-	return endpoints.GenerateLoremResponse{
+// DecodeWordResponse ...
+func DecodeWordResponse(_ context.Context, response interface{}) (interface{}, error) {
+	res := response.(*pb.WordResponse)
+	return endpoints.LoremResponse{
 		Message: res.Message,
-		Err:     res.Err,
+	}, nil
+}
+
+// EncodeSentenceRequest ...
+func EncodeSentenceRequest(_ context.Context, request interface{}) (interface{}, error) {
+	req := request.(endpoints.LoremRequest)
+	return &pb.SentenceRequest{
+		Min: req.Min,
+		Max: req.Max,
+	}, nil
+}
+
+// DecodeSentenceRequest ...
+func DecodeSentenceRequest(_ context.Context, request interface{}) (interface{}, error) {
+	req := request.(*pb.SentenceRequest)
+	return endpoints.LoremRequest{
+		Min: req.Min,
+		Max: req.Max,
+	}, nil
+}
+
+// EncodeSentenceResponse ...
+func EncodeSentenceResponse(_ context.Context, response interface{}) (interface{}, error) {
+	res := response.(endpoints.LoremResponse)
+	return &pb.SentenceResponse{
+		Message: res.Message,
+	}, nil
+}
+
+// DecodeSentenceResponse ...
+func DecodeSentenceResponse(_ context.Context, response interface{}) (interface{}, error) {
+	res := response.(*pb.SentenceResponse)
+	return endpoints.LoremResponse{
+		Message: res.Message,
+	}, nil
+}
+
+// EncodeParagraphRequest ...
+func EncodeParagraphRequest(_ context.Context, request interface{}) (interface{}, error) {
+	req := request.(endpoints.LoremRequest)
+	return &pb.ParagraphRequest{
+		Min: req.Min,
+		Max: req.Max,
+	}, nil
+}
+
+// DecodeParagraphRequest ...
+func DecodeParagraphRequest(_ context.Context, request interface{}) (interface{}, error) {
+	req := request.(*pb.ParagraphRequest)
+	return endpoints.LoremRequest{
+		Min: req.Min,
+		Max: req.Max,
+	}, nil
+}
+
+// EncodeParagraphResponse ...
+func EncodeParagraphResponse(_ context.Context, response interface{}) (interface{}, error) {
+	res := response.(endpoints.LoremResponse)
+	return &pb.ParagraphResponse{
+		Message: res.Message,
+	}, nil
+}
+
+// DecodeParagraphResponse ...
+func DecodeParagraphResponse(_ context.Context, response interface{}) (interface{}, error) {
+	res := response.(*pb.ParagraphResponse)
+	return endpoints.LoremResponse{
+		Message: res.Message,
 	}, nil
 }

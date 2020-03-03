@@ -11,14 +11,30 @@ import (
 
 // New ...
 func New(conn *grpc.ClientConn) service.Service {
-	var loremEndpoint = grpctransport.NewClient(
-		conn, "pb.Lorem", "Lorem",
-		transport.EncodeLoremRequest,
-		transport.DecodeLoremResponse,
-		pb.LoremResponse{},
+	var wordEndpoint = grpctransport.NewClient(
+		conn, "pb.Lorem", "Word",
+		transport.EncodeWordRequest,
+		transport.DecodeWordResponse,
+		pb.WordResponse{},
+	).Endpoint()
+
+	var sentenceEndpoint = grpctransport.NewClient(
+		conn, "pb.Lorem", "Sentence",
+		transport.EncodeSentenceRequest,
+		transport.DecodeSentenceResponse,
+		pb.SentenceResponse{},
+	).Endpoint()
+
+	var paragraphEndpoint = grpctransport.NewClient(
+		conn, "pb.Lorem", "Paragraph",
+		transport.EncodeParagraphRequest,
+		transport.DecodeParagraphResponse,
+		pb.ParagraphResponse{},
 	).Endpoint()
 
 	return endpoints.Endpoints{
-		GenerateLorem: loremEndpoint,
+		WordEndpoint:      wordEndpoint,
+		SentenceEndpoint:  sentenceEndpoint,
+		ParagraphEndpoint: paragraphEndpoint,
 	}
 }

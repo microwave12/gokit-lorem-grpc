@@ -24,111 +24,271 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type LoremRequest struct {
-	RequestType          string   `protobuf:"bytes,1,opt,name=requestType,proto3" json:"requestType,omitempty"`
-	Min                  int32    `protobuf:"varint,2,opt,name=min,proto3" json:"min,omitempty"`
-	Max                  int32    `protobuf:"varint,3,opt,name=max,proto3" json:"max,omitempty"`
+type WordRequest struct {
+	Min                  int32    `protobuf:"varint,1,opt,name=min,proto3" json:"min,omitempty"`
+	Max                  int32    `protobuf:"varint,2,opt,name=max,proto3" json:"max,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *LoremRequest) Reset()         { *m = LoremRequest{} }
-func (m *LoremRequest) String() string { return proto.CompactTextString(m) }
-func (*LoremRequest) ProtoMessage()    {}
-func (*LoremRequest) Descriptor() ([]byte, []int) {
+func (m *WordRequest) Reset()         { *m = WordRequest{} }
+func (m *WordRequest) String() string { return proto.CompactTextString(m) }
+func (*WordRequest) ProtoMessage()    {}
+func (*WordRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_e90116297b6670c3, []int{0}
 }
 
-func (m *LoremRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_LoremRequest.Unmarshal(m, b)
+func (m *WordRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_WordRequest.Unmarshal(m, b)
 }
-func (m *LoremRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_LoremRequest.Marshal(b, m, deterministic)
+func (m *WordRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_WordRequest.Marshal(b, m, deterministic)
 }
-func (m *LoremRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LoremRequest.Merge(m, src)
+func (m *WordRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_WordRequest.Merge(m, src)
 }
-func (m *LoremRequest) XXX_Size() int {
-	return xxx_messageInfo_LoremRequest.Size(m)
+func (m *WordRequest) XXX_Size() int {
+	return xxx_messageInfo_WordRequest.Size(m)
 }
-func (m *LoremRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_LoremRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_LoremRequest proto.InternalMessageInfo
-
-func (m *LoremRequest) GetRequestType() string {
-	if m != nil {
-		return m.RequestType
-	}
-	return ""
+func (m *WordRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_WordRequest.DiscardUnknown(m)
 }
 
-func (m *LoremRequest) GetMin() int32 {
+var xxx_messageInfo_WordRequest proto.InternalMessageInfo
+
+func (m *WordRequest) GetMin() int32 {
 	if m != nil {
 		return m.Min
 	}
 	return 0
 }
 
-func (m *LoremRequest) GetMax() int32 {
+func (m *WordRequest) GetMax() int32 {
 	if m != nil {
 		return m.Max
 	}
 	return 0
 }
 
-type LoremResponse struct {
+type WordResponse struct {
 	Message              string   `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
-	Err                  string   `protobuf:"bytes,2,opt,name=err,proto3" json:"err,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *LoremResponse) Reset()         { *m = LoremResponse{} }
-func (m *LoremResponse) String() string { return proto.CompactTextString(m) }
-func (*LoremResponse) ProtoMessage()    {}
-func (*LoremResponse) Descriptor() ([]byte, []int) {
+func (m *WordResponse) Reset()         { *m = WordResponse{} }
+func (m *WordResponse) String() string { return proto.CompactTextString(m) }
+func (*WordResponse) ProtoMessage()    {}
+func (*WordResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_e90116297b6670c3, []int{1}
 }
 
-func (m *LoremResponse) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_LoremResponse.Unmarshal(m, b)
+func (m *WordResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_WordResponse.Unmarshal(m, b)
 }
-func (m *LoremResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_LoremResponse.Marshal(b, m, deterministic)
+func (m *WordResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_WordResponse.Marshal(b, m, deterministic)
 }
-func (m *LoremResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_LoremResponse.Merge(m, src)
+func (m *WordResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_WordResponse.Merge(m, src)
 }
-func (m *LoremResponse) XXX_Size() int {
-	return xxx_messageInfo_LoremResponse.Size(m)
+func (m *WordResponse) XXX_Size() int {
+	return xxx_messageInfo_WordResponse.Size(m)
 }
-func (m *LoremResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_LoremResponse.DiscardUnknown(m)
+func (m *WordResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_WordResponse.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_LoremResponse proto.InternalMessageInfo
+var xxx_messageInfo_WordResponse proto.InternalMessageInfo
 
-func (m *LoremResponse) GetMessage() string {
+func (m *WordResponse) GetMessage() string {
 	if m != nil {
 		return m.Message
 	}
 	return ""
 }
 
-func (m *LoremResponse) GetErr() string {
+type SentenceRequest struct {
+	Min                  int32    `protobuf:"varint,1,opt,name=min,proto3" json:"min,omitempty"`
+	Max                  int32    `protobuf:"varint,2,opt,name=max,proto3" json:"max,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *SentenceRequest) Reset()         { *m = SentenceRequest{} }
+func (m *SentenceRequest) String() string { return proto.CompactTextString(m) }
+func (*SentenceRequest) ProtoMessage()    {}
+func (*SentenceRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e90116297b6670c3, []int{2}
+}
+
+func (m *SentenceRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_SentenceRequest.Unmarshal(m, b)
+}
+func (m *SentenceRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_SentenceRequest.Marshal(b, m, deterministic)
+}
+func (m *SentenceRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SentenceRequest.Merge(m, src)
+}
+func (m *SentenceRequest) XXX_Size() int {
+	return xxx_messageInfo_SentenceRequest.Size(m)
+}
+func (m *SentenceRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_SentenceRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_SentenceRequest proto.InternalMessageInfo
+
+func (m *SentenceRequest) GetMin() int32 {
 	if m != nil {
-		return m.Err
+		return m.Min
+	}
+	return 0
+}
+
+func (m *SentenceRequest) GetMax() int32 {
+	if m != nil {
+		return m.Max
+	}
+	return 0
+}
+
+type SentenceResponse struct {
+	Message              string   `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *SentenceResponse) Reset()         { *m = SentenceResponse{} }
+func (m *SentenceResponse) String() string { return proto.CompactTextString(m) }
+func (*SentenceResponse) ProtoMessage()    {}
+func (*SentenceResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e90116297b6670c3, []int{3}
+}
+
+func (m *SentenceResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_SentenceResponse.Unmarshal(m, b)
+}
+func (m *SentenceResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_SentenceResponse.Marshal(b, m, deterministic)
+}
+func (m *SentenceResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SentenceResponse.Merge(m, src)
+}
+func (m *SentenceResponse) XXX_Size() int {
+	return xxx_messageInfo_SentenceResponse.Size(m)
+}
+func (m *SentenceResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_SentenceResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_SentenceResponse proto.InternalMessageInfo
+
+func (m *SentenceResponse) GetMessage() string {
+	if m != nil {
+		return m.Message
+	}
+	return ""
+}
+
+type ParagraphRequest struct {
+	Min                  int32    `protobuf:"varint,1,opt,name=min,proto3" json:"min,omitempty"`
+	Max                  int32    `protobuf:"varint,2,opt,name=max,proto3" json:"max,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ParagraphRequest) Reset()         { *m = ParagraphRequest{} }
+func (m *ParagraphRequest) String() string { return proto.CompactTextString(m) }
+func (*ParagraphRequest) ProtoMessage()    {}
+func (*ParagraphRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e90116297b6670c3, []int{4}
+}
+
+func (m *ParagraphRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ParagraphRequest.Unmarshal(m, b)
+}
+func (m *ParagraphRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ParagraphRequest.Marshal(b, m, deterministic)
+}
+func (m *ParagraphRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ParagraphRequest.Merge(m, src)
+}
+func (m *ParagraphRequest) XXX_Size() int {
+	return xxx_messageInfo_ParagraphRequest.Size(m)
+}
+func (m *ParagraphRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_ParagraphRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ParagraphRequest proto.InternalMessageInfo
+
+func (m *ParagraphRequest) GetMin() int32 {
+	if m != nil {
+		return m.Min
+	}
+	return 0
+}
+
+func (m *ParagraphRequest) GetMax() int32 {
+	if m != nil {
+		return m.Max
+	}
+	return 0
+}
+
+type ParagraphResponse struct {
+	Message              string   `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ParagraphResponse) Reset()         { *m = ParagraphResponse{} }
+func (m *ParagraphResponse) String() string { return proto.CompactTextString(m) }
+func (*ParagraphResponse) ProtoMessage()    {}
+func (*ParagraphResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e90116297b6670c3, []int{5}
+}
+
+func (m *ParagraphResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ParagraphResponse.Unmarshal(m, b)
+}
+func (m *ParagraphResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ParagraphResponse.Marshal(b, m, deterministic)
+}
+func (m *ParagraphResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ParagraphResponse.Merge(m, src)
+}
+func (m *ParagraphResponse) XXX_Size() int {
+	return xxx_messageInfo_ParagraphResponse.Size(m)
+}
+func (m *ParagraphResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ParagraphResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ParagraphResponse proto.InternalMessageInfo
+
+func (m *ParagraphResponse) GetMessage() string {
+	if m != nil {
+		return m.Message
 	}
 	return ""
 }
 
 func init() {
-	proto.RegisterType((*LoremRequest)(nil), "pb.LoremRequest")
-	proto.RegisterType((*LoremResponse)(nil), "pb.LoremResponse")
+	proto.RegisterType((*WordRequest)(nil), "pb.WordRequest")
+	proto.RegisterType((*WordResponse)(nil), "pb.WordResponse")
+	proto.RegisterType((*SentenceRequest)(nil), "pb.SentenceRequest")
+	proto.RegisterType((*SentenceResponse)(nil), "pb.SentenceResponse")
+	proto.RegisterType((*ParagraphRequest)(nil), "pb.ParagraphRequest")
+	proto.RegisterType((*ParagraphResponse)(nil), "pb.ParagraphResponse")
 }
 
 func init() {
@@ -136,19 +296,23 @@ func init() {
 }
 
 var fileDescriptor_e90116297b6670c3 = []byte{
-	// 184 bytes of a gzipped FileDescriptorProto
+	// 242 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x92, 0xce, 0xc9, 0x2f, 0x4a,
 	0xcd, 0xd5, 0x4d, 0x2f, 0x2a, 0x48, 0xd6, 0x2f, 0x48, 0xd2, 0x2f, 0x4e, 0x2d, 0x2a, 0xcb, 0x4c,
-	0x4e, 0xd5, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x2a, 0x48, 0x52, 0x0a, 0xe1, 0xe2, 0xf1,
-	0x01, 0x29, 0x09, 0x4a, 0x2d, 0x2c, 0x4d, 0x2d, 0x2e, 0x11, 0x52, 0xe0, 0xe2, 0x2e, 0x82, 0x30,
-	0x43, 0x2a, 0x0b, 0x52, 0x25, 0x18, 0x15, 0x18, 0x35, 0x38, 0x83, 0x90, 0x85, 0x84, 0x04, 0xb8,
-	0x98, 0x73, 0x33, 0xf3, 0x24, 0x98, 0x14, 0x18, 0x35, 0x58, 0x83, 0x40, 0x4c, 0xb0, 0x48, 0x62,
-	0x85, 0x04, 0x33, 0x54, 0x24, 0xb1, 0x42, 0xc9, 0x9a, 0x8b, 0x17, 0x6a, 0x6a, 0x71, 0x41, 0x7e,
-	0x5e, 0x71, 0xaa, 0x90, 0x04, 0x17, 0x7b, 0x6e, 0x6a, 0x71, 0x71, 0x62, 0x3a, 0xcc, 0x48, 0x18,
-	0x17, 0xa4, 0x39, 0xb5, 0xa8, 0x08, 0x6c, 0x1c, 0x67, 0x10, 0x88, 0x69, 0x64, 0xce, 0xc5, 0x0a,
-	0xd6, 0x2c, 0xa4, 0x07, 0x63, 0x08, 0xe8, 0x15, 0x24, 0xe9, 0x21, 0x3b, 0x53, 0x4a, 0x10, 0x49,
-	0x04, 0x62, 0x85, 0x12, 0x43, 0x12, 0x1b, 0xd8, 0x5b, 0xc6, 0x80, 0x00, 0x00, 0x00, 0xff, 0xff,
-	0x31, 0xc1, 0x33, 0xc5, 0xf5, 0x00, 0x00, 0x00,
+	0x4e, 0xd5, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x2a, 0x48, 0x52, 0x32, 0xe4, 0xe2, 0x0e,
+	0xcf, 0x2f, 0x4a, 0x09, 0x4a, 0x2d, 0x2c, 0x4d, 0x2d, 0x2e, 0x11, 0x12, 0xe0, 0x62, 0xce, 0xcd,
+	0xcc, 0x93, 0x60, 0x54, 0x60, 0xd4, 0x60, 0x0d, 0x02, 0x31, 0xc1, 0x22, 0x89, 0x15, 0x12, 0x4c,
+	0x50, 0x91, 0xc4, 0x0a, 0x25, 0x0d, 0x2e, 0x1e, 0x88, 0x96, 0xe2, 0x82, 0xfc, 0xbc, 0xe2, 0x54,
+	0x21, 0x09, 0x2e, 0xf6, 0xdc, 0xd4, 0xe2, 0xe2, 0xc4, 0xf4, 0x54, 0xb0, 0x3e, 0xce, 0x20, 0x18,
+	0x57, 0xc9, 0x94, 0x8b, 0x3f, 0x38, 0x35, 0xaf, 0x24, 0x35, 0x2f, 0x39, 0x95, 0x14, 0x0b, 0x74,
+	0xb8, 0x04, 0x10, 0xda, 0x08, 0x5a, 0x62, 0xc6, 0x25, 0x10, 0x90, 0x58, 0x94, 0x98, 0x5e, 0x94,
+	0x58, 0x90, 0x41, 0x8a, 0x2d, 0xba, 0x5c, 0x82, 0x48, 0xfa, 0x08, 0x59, 0x63, 0xb4, 0x92, 0x91,
+	0x8b, 0xd5, 0x07, 0x14, 0x98, 0x42, 0xda, 0x5c, 0x2c, 0x20, 0xff, 0x0b, 0xf1, 0xeb, 0x15, 0x24,
+	0xe9, 0x21, 0x05, 0x9e, 0x94, 0x00, 0x42, 0x00, 0x62, 0x9c, 0x12, 0x83, 0x90, 0x39, 0x17, 0x07,
+	0xcc, 0x2f, 0x42, 0xc2, 0x20, 0x79, 0xb4, 0x00, 0x91, 0x12, 0x41, 0x15, 0x84, 0x6b, 0xb4, 0xe2,
+	0xe2, 0x84, 0x3b, 0x4f, 0x08, 0xac, 0x08, 0xdd, 0x97, 0x52, 0xa2, 0x68, 0xa2, 0x30, 0xbd, 0x49,
+	0x6c, 0xe0, 0xf8, 0x35, 0x06, 0x04, 0x00, 0x00, 0xff, 0xff, 0x58, 0xc6, 0x70, 0x0b, 0xfe, 0x01,
+	0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -163,7 +327,9 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type LoremClient interface {
-	Lorem(ctx context.Context, in *LoremRequest, opts ...grpc.CallOption) (*LoremResponse, error)
+	Word(ctx context.Context, in *WordRequest, opts ...grpc.CallOption) (*WordResponse, error)
+	Sentence(ctx context.Context, in *SentenceRequest, opts ...grpc.CallOption) (*SentenceResponse, error)
+	Paragraph(ctx context.Context, in *ParagraphRequest, opts ...grpc.CallOption) (*ParagraphResponse, error)
 }
 
 type loremClient struct {
@@ -174,9 +340,27 @@ func NewLoremClient(cc grpc.ClientConnInterface) LoremClient {
 	return &loremClient{cc}
 }
 
-func (c *loremClient) Lorem(ctx context.Context, in *LoremRequest, opts ...grpc.CallOption) (*LoremResponse, error) {
-	out := new(LoremResponse)
-	err := c.cc.Invoke(ctx, "/pb.Lorem/Lorem", in, out, opts...)
+func (c *loremClient) Word(ctx context.Context, in *WordRequest, opts ...grpc.CallOption) (*WordResponse, error) {
+	out := new(WordResponse)
+	err := c.cc.Invoke(ctx, "/pb.Lorem/Word", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *loremClient) Sentence(ctx context.Context, in *SentenceRequest, opts ...grpc.CallOption) (*SentenceResponse, error) {
+	out := new(SentenceResponse)
+	err := c.cc.Invoke(ctx, "/pb.Lorem/Sentence", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *loremClient) Paragraph(ctx context.Context, in *ParagraphRequest, opts ...grpc.CallOption) (*ParagraphResponse, error) {
+	out := new(ParagraphResponse)
+	err := c.cc.Invoke(ctx, "/pb.Lorem/Paragraph", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -185,35 +369,79 @@ func (c *loremClient) Lorem(ctx context.Context, in *LoremRequest, opts ...grpc.
 
 // LoremServer is the server API for Lorem service.
 type LoremServer interface {
-	Lorem(context.Context, *LoremRequest) (*LoremResponse, error)
+	Word(context.Context, *WordRequest) (*WordResponse, error)
+	Sentence(context.Context, *SentenceRequest) (*SentenceResponse, error)
+	Paragraph(context.Context, *ParagraphRequest) (*ParagraphResponse, error)
 }
 
 // UnimplementedLoremServer can be embedded to have forward compatible implementations.
 type UnimplementedLoremServer struct {
 }
 
-func (*UnimplementedLoremServer) Lorem(ctx context.Context, req *LoremRequest) (*LoremResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Lorem not implemented")
+func (*UnimplementedLoremServer) Word(ctx context.Context, req *WordRequest) (*WordResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Word not implemented")
+}
+func (*UnimplementedLoremServer) Sentence(ctx context.Context, req *SentenceRequest) (*SentenceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Sentence not implemented")
+}
+func (*UnimplementedLoremServer) Paragraph(ctx context.Context, req *ParagraphRequest) (*ParagraphResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Paragraph not implemented")
 }
 
 func RegisterLoremServer(s *grpc.Server, srv LoremServer) {
 	s.RegisterService(&_Lorem_serviceDesc, srv)
 }
 
-func _Lorem_Lorem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(LoremRequest)
+func _Lorem_Word_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(WordRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LoremServer).Lorem(ctx, in)
+		return srv.(LoremServer).Word(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.Lorem/Lorem",
+		FullMethod: "/pb.Lorem/Word",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LoremServer).Lorem(ctx, req.(*LoremRequest))
+		return srv.(LoremServer).Word(ctx, req.(*WordRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Lorem_Sentence_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SentenceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LoremServer).Sentence(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pb.Lorem/Sentence",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LoremServer).Sentence(ctx, req.(*SentenceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Lorem_Paragraph_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ParagraphRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LoremServer).Paragraph(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pb.Lorem/Paragraph",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LoremServer).Paragraph(ctx, req.(*ParagraphRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -223,8 +451,16 @@ var _Lorem_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*LoremServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "Lorem",
-			Handler:    _Lorem_Lorem_Handler,
+			MethodName: "Word",
+			Handler:    _Lorem_Word_Handler,
+		},
+		{
+			MethodName: "Sentence",
+			Handler:    _Lorem_Sentence_Handler,
+		},
+		{
+			MethodName: "Paragraph",
+			Handler:    _Lorem_Paragraph_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

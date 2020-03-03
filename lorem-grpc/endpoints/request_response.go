@@ -1,14 +1,12 @@
 package endpoints
 
-// GenerateLoremRequest ...
-type GenerateLoremRequest struct {
-	RequestType string
-	Min         int32
-	Max         int32
+// LoremRequest ...
+type LoremRequest struct {
+	Min int32
+	Max int32
 }
 
-// GenerateLoremResponse ...
-type GenerateLoremResponse struct {
+// LoremResponse ...
+type LoremResponse struct {
 	Message string `json:"message"`
-	Err     string `json:"err,omitempty"`
 }

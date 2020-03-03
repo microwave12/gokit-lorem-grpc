@@ -30,7 +30,9 @@ func main() {
 	svc = implementation.LoremService{}
 
 	endpoints := endpoints.Endpoints{
-		GenerateLorem: endpoints.MakeGenerateLoremEndpoint(svc),
+		WordEndpoint:      endpoints.MakeWordEndpoint(svc),
+		SentenceEndpoint:  endpoints.MakeSentenceEndpoint(svc),
+		ParagraphEndpoint: endpoints.MakeParagraphEndpoint(svc),
 	}
 
 	go func() {

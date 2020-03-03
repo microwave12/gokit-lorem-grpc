@@ -30,21 +30,38 @@ func main() {
 	var cmd string
 	cmd, args = pop(args)
 
+	var minStr, maxStr string
+
+	minStr, args = pop(args)
+	maxStr, args = pop(args)
+
+	min, _ := strconv.Atoi(minStr)
+	max, _ := strconv.Atoi(maxStr)
+
 	switch cmd {
-	case "lorem":
-		var requestType, minStr, maxStr string
-
-		requestType, args = pop(args)
-		minStr, args = pop(args)
-		maxStr, args = pop(args)
-
-		min, _ := strconv.Atoi(minStr)
-		max, _ := strconv.Atoi(maxStr)
-
-		msg, err := loremService.Lorem(ctx, requestType, min, max)
+	case "word":
+		msg, err := loremService.Word(ctx, min, max)
 		if err != nil {
-			log.Fatalln(err.Error())
+			fmt.Printf("%s", err)
+			break
 		}
+
+		fmt.Println(msg)
+	case "sentence":
+		msg, err := loremService.Sentence(ctx, min, max)
+		if err != nil {
+			fmt.Printf("%s", err)
+			break
+		}
+
+		fmt.Println(msg)
+	case "paragraph":
+		msg, err := loremService.Paragraph(ctx, min, max)
+		if err != nil {
+			fmt.Printf("%s", err)
+			break
+		}
+
 		fmt.Println(msg)
 	default:
 		log.Fatalln("unknown command", cmd)

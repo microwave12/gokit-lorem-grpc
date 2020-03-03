@@ -9,25 +9,55 @@ import (
 )
 
 type grpcServer struct {
-	lorem grpctransport.Handler
+	wordHandler      grpctransport.Handler
+	sentenceHandler  grpctransport.Handler
+	paragraphHandler grpctransport.Handler
 }
 
-func (gs *grpcServer) Lorem(ctx context.Context, r *pb.LoremRequest) (*pb.LoremResponse, error) {
-	_, res, err := gs.lorem.ServeGRPC(ctx, r)
+func (gs *grpcServer) Word(ctx context.Context, r *pb.WordRequest) (*pb.WordResponse, error) {
+	_, res, err := gs.wordHandler.ServeGRPC(ctx, r)
 	if err != nil {
 		return nil, err
 	}
 
-	return res.(*pb.LoremResponse), nil
+	return res.(*pb.WordResponse), nil
+}
+
+func (gs *grpcServer) Sentence(ctx context.Context, r *pb.SentenceRequest) (*pb.SentenceResponse, error) {
+	_, res, err := gs.sentenceHandler.ServeGRPC(ctx, r)
+	if err != nil {
+		return nil, err
+	}
+
+	return res.(*pb.SentenceResponse), nil
+}
+
+func (gs *grpcServer) Paragraph(ctx context.Context, r *pb.ParagraphRequest) (*pb.ParagraphResponse, error) {
+	_, res, err := gs.paragraphHandler.ServeGRPC(ctx, r)
+	if err != nil {
+		return nil, err
+	}
+
+	return res.(*pb.ParagraphResponse), nil
 }
 
 // NewGRPCService ...
 func NewGRPCService(_ context.Context, endpoints endpoints.Endpoints) pb.LoremServer {
 	return &grpcServer{
-		lorem: grpctransport.NewServer(
-			endpoints.GenerateLorem,
-			DecodeLoremRequest,
-			EncodeLoremResponse,
+		wordHandler: grpctransport.NewServer(
+			endpoints.WordEndpoint,
+			DecodeWordRequest,
+			EncodeWordResponse,
+		),
+		sentenceHandler: grpctransport.NewServer(
+			endpoints.SentenceEndpoint,
+			DecodeSentenceRequest,
+			EncodeSentenceResponse,
+		),
+		paragraphHandler: grpctransport.NewServer(
+			endpoints.ParagraphEndpoint,
+			DecodeParagraphRequest,
+			EncodeParagraphResponse,
 		),
 	}
 }
